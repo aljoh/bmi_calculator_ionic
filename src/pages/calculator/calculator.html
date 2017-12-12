@@ -16,12 +16,12 @@
 <ion-content padding>
   <ion-list>
     <ion-item>
-      <ion-label floating>Weight (kg)</ion-label>
+      <ion-label floating>Weight ({{weight_prefix}})</ion-label>
       <ion-input type="number" [(ngModel)]="weight"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label floating>Height (cm)</ion-label>
+      <ion-label floating>Height ({{height_prefix}})</ion-label>
       <ion-input type="number" [(ngModel)]="height"></ion-input>
     </ion-item>
   </ion-list>
@@ -39,7 +39,7 @@
       BMI Calculation
     </ion-card-header>
     <ion-card-content>
-      <p>Person: Weight {{this.weight}} kg, Height {{this.height}} cm</p>
+      <p>Person: Weight {{this.weight}} {{weight_prefix}}, Height {{this.height}} {{height_prefix}}</p>
       <p>BMI: {{bmiValue}}</p>
       <p><strong>You are {{this.bmiMessage}}</strong></p>
     </ion-card-content>
