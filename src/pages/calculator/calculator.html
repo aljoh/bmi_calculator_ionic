@@ -30,6 +30,10 @@
     <button block ion-button (click)="calculateBMI()">Calculate</button>
   </div>
 
+  <div padding>
+    <button block ion-button (click)="systemSwitch()">Switch System</button>
+  </div>
+
   <ion-card *ngIf="bmiValue">
     <ion-card-header>
       BMI Calculation

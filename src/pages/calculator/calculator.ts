@@ -18,6 +18,7 @@ export class CalculatorPage {
   weight: number;
   bmiValue: number;
   bmiMessage: string;
+  system: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -26,9 +27,23 @@ export class CalculatorPage {
     console.log('ionViewDidLoad CalculatorPage');
   }
 
+  systemSwitch() {
+    if (this.system == "Metric" || null) {
+      this.system = "Imperial"
+    }
+    else {
+      this.system = "Metric"
+    }
+  }
+
   calculateBMI() {
     if (this.weight > 0 && this.height > 0) {
-      let finalBmi = this.weight / (this.height / 100 * this.height / 100);
+      if (this.system == "Metric" || null) {
+        let finalBmi = this.weight / (this.height / 100 * this.height / 100);
+      }
+      else {
+        let finalBmi = (this.weight * 703) / (this.height * this.height);
+      }
       this.bmiValue = parseFloat(finalBmi.toFixed(2));
       this.setBMIMessage();
     }
