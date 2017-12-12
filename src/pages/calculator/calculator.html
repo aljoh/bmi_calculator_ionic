@@ -27,11 +27,11 @@
   </ion-list>
 
   <div padding>
-    <button block ion-button (click)="calculateBMI()">Calculate</button>
+    <button block ion-button (click)="systemSwitch()">Switch to {{system_prefix}}</button>
   </div>
 
   <div padding>
-    <button block ion-button (click)="systemSwitch()">Switch System</button>
+    <button block ion-button (click)="calculateBMI()">Calculate</button>
   </div>
 
   <ion-card *ngIf="bmiValue">

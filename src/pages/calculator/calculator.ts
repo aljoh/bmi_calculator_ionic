@@ -21,11 +21,13 @@ export class CalculatorPage {
   system: string;
   height_prefix: string;
   weight_prefix: string;
+  system_prefix: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.system = "Metric"
     this.height_prefix = "cm"
     this.weight_prefix = "kg"
+    this.system_prefix = "Imperial"
   }
 
   ionViewDidLoad() {
@@ -37,12 +39,15 @@ export class CalculatorPage {
       this.system = "Imperial"
       this.height_prefix = "inches"
       this.weight_prefix = "pounds"
+      this.system_prefix = "Metric"
     }
     else if (this.system == "Imperial") {
       this.system = "Metric"
       this.height_prefix = "cm"
       this.weight_prefix = "kg"
+      this.system_prefix = "Imperial"
     }
+    this.calculateBMI();
   }
 
   calculateBMI() {
